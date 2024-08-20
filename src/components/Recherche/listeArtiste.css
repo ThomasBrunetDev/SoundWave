@@ -1,0 +1,22 @@
+@keyframes fade {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity:1;
+  }
+}
+
+.transition{
+  animation: fade 1.5s ease-in-out
+}
+
+
+.box:hover{
+  box-shadow: 10px 10px 10px #955EED;
+}
+
+.public-playlist-cover-inverse{
+  background: linear-gradient(#492F75 90%, transparent);
+}

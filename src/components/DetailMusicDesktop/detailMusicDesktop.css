@@ -1,0 +1,29 @@
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px; /* Largeur du pouce */
+    height: 20px; /* Hauteur du pouce */
+    background: #db3434; /* Couleur de fond */
+    border-radius: 50%; /* Pouce de forme circulaire */
+    cursor: pointer; /* Curseur de type pointeur */
+    border: 2px solid #2980b9; /* Bordure du pouce */
+}
+
+input[type="range"]::-moz-range-thumb{
+    -moz-appearance: none;
+    width: 20px; /* Largeur du pouce */
+    height: 20px; /* Hauteur du pouce */
+    background: #db3434; /* Couleur de fond */
+    border-radius: 50%; /* Pouce de forme circulaire */
+    cursor: pointer; /* Curseur de type pointeur */
+    border: 2px solid #2980b9; /* Bordure du pouce */
+}
+
+input[type="range"]::-ms-thumb{
+    -ms-appearance: none;
+    width: 20px; /* Largeur du pouce */
+    height: 20px; /* Hauteur du pouce */
+    background: rgb(219, 52, 52); /* Couleur de fond */
+    border-radius: 50%; /* Pouce de forme circulaire */
+    cursor: pointer; /* Curseur de type pointeur */
+    border: 2px solid #2980b9; /* Bordure du pouce */
+}

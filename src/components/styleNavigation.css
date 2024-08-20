@@ -1,0 +1,9 @@
+.menu-gradient{
+    background: linear-gradient(0deg, hsla(262, 87%, 46%, 0.80) 20%, rgba(76, 42, 136, 0.70) ,  transparent);
+    backdrop-filter: blur(50px);
+}
+
+.menu-desktop-gradient{
+    background: linear-gradient(90deg, hsla(262, 87%, 46%, 0.80) 20%, rgba(76, 42, 136, 0.70) ,  transparent);
+    backdrop-filter: blur(50px);
+}

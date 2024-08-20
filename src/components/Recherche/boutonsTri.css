@@ -1,0 +1,67 @@
+.boutonsTri {  
+  width: 7rem;
+  padding:0.5rem 0;
+  font-size:1rem;
+  border-radius:1rem; 
+  height: 3.5rem; 
+  border: none;
+  outline: none;
+  z-index: 0;
+  position: relative;
+  } 
+  
+.boutonsTri:focus {  
+  font-weight: bold;
+  color: #492F75; 
+  font-size:1.5rem;
+  } 
+
+.boutonsTri:before {
+    content: '';
+    background: linear-gradient(45deg, #955EED, #7a00ff, white);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;   
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.boutonsTri:active {
+    color: #955EED;
+}
+
+.boutonsTri:active:after {
+    background: transparent;
+}
+
+.boutonsTri:hover:before {
+    opacity: 1;
+}
+
+.boutonsTri:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #955EED;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+
+
+

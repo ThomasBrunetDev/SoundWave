@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Tanker";
+    src: url('./assets/fonts/Tanker/TANKER.OTF');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Supreme-Regular";
+    src: url('./assets/fonts/Supreme/SUPREME-REGULAR.OTF');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Supreme-Bold";
+    src: url('./assets/fonts/Supreme/SUPREME-BOLD.OTF');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Supreme-Medium";
+    src: url('./assets/fonts/Supreme/SUPREME-MEDIUM.OTF');
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: "Supreme-BoldItalic";
+    src: url('./assets/fonts/Supreme/SUPREME-BOLDITALIC.OTF');
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: "Heavitas";
+    src: url('./assets/fonts/Heavitas/Heavitas.ttf');
+    font-weight: normal;
+
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+a:focus {
+    color: white;
+    text-decoration: none;
+}
+
+input,
+select,
+option {
+    color: black;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea {
+    outline: none;
+}
+
+
+
+.app {
+    grid-template-columns: 28vw 72vw;
+}
+
+@media screen and (min-width: 1280px) {
+    .app {
+        grid-template-columns: 25vw 75vw;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .app {
+        grid-template-columns: 20vw 80vw;
+    }
+}
+
+
+.desktop-nav {
+    grid-column: 1 / 2;
+}
+
+.main {
+    grid-column: 2 / 3;
+}
+
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 7px;
+    /* Largeur de la barre de défilement */
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #A67FE7;
+    /* Couleur du "thumb" (la partie déplaçable) */
+    border-radius: 9999px;
+    /* Bord arrondi du "thumb" */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #5f3d99;
+    border-radius: 9999px;
+    /* Couleur de la piste de la barre de défilement */
+}
+
+/* Pour Firefox */
+/* Remarque : ces règles peuvent changer à mesure que Firefox évolue, veuillez consulter la documentation Firefox pour les mises à jour. */
+* {
+    scrollbar-color: #888 #f0f0f0;
+    /* Couleur de la "thumb" et de la piste */
+    scrollbar-width: thin;
+    /* Largeur de la barre de défilement */
+}

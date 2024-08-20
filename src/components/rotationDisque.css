@@ -1,0 +1,38 @@
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  
+  }
+  to {
+      transform: rotate(360deg);
+
+  }
+}
+.rotationDisque {
+  animation: rotation 2s linear 1;  
+  animation-delay: 1s;
+}
+
+
+/* Vagues*/
+
+/* .vagues {
+  top:107px; 
+  transform:rotate(-3deg);
+  right:37px;
+
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.fadeIn {
+  animation: fadeIn 1s ease-in-out; 
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+} */

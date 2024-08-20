@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" width="177.39" height="99.95" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 177.39 99.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Dégradé_sans_nom_1792);
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#Dégradé_sans_nom_1787);
+      }
+
+      .cls-3 {
+        fill: url(#Dégradé_sans_nom_1794);
+      }
+    </style>
+    <linearGradient id="Dégradé_sans_nom_1787" data-name="Dégradé sans nom 1787" x1="79.81" y1="34.69" x2="186.46" y2="34.69" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8a76d3"/>
+      <stop offset=".22" stop-color="#8773cf"/>
+      <stop offset=".4" stop-color="#7e6ac6"/>
+      <stop offset=".56" stop-color="#6f5ab5"/>
+      <stop offset=".7" stop-color="#5a459e"/>
+      <stop offset=".84" stop-color="#3e2980"/>
+      <stop offset=".97" stop-color="#1d075c"/>
+      <stop offset="1" stop-color="#160054"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_1792" data-name="Dégradé sans nom 1792" x1="0" y1="49.96" x2="174.04" y2="49.96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4b0482"/>
+      <stop offset=".02" stop-color="#4e0987"/>
+      <stop offset=".17" stop-color="#6a31ab"/>
+      <stop offset=".32" stop-color="#8252c9"/>
+      <stop offset=".48" stop-color="#946ce1"/>
+      <stop offset=".64" stop-color="#a07ef1"/>
+      <stop offset=".81" stop-color="#a889fb"/>
+      <stop offset="1" stop-color="#ab8dff"/>
+    </linearGradient>
+    <linearGradient id="Dégradé_sans_nom_1794" data-name="Dégradé sans nom 1794" x1="26.92" y1="74.06" x2="156.43" y2="74.06" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c491f2"/>
+      <stop offset=".21" stop-color="#c08eee"/>
+      <stop offset=".37" stop-color="#b785e5"/>
+      <stop offset=".51" stop-color="#a776d4"/>
+      <stop offset=".64" stop-color="#9060bd"/>
+      <stop offset=".77" stop-color="#73459f"/>
+      <stop offset=".89" stop-color="#4f237b"/>
+      <stop offset="1" stop-color="#290054"/>
+    </linearGradient>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <g>
+      <path class="cls-2" d="m98.24,29.96c11.57-1.63,19.99-10.96,33.13-15.52,4.52-1.57,17.16-4.66,29.48,1.43,9.74,4.82,14.6,13.23,16.54,17.15-.43,1.6-.92,3.25-1.47,4.96-.44,1.35-.88,2.64-1.34,3.89-1.41,2.38-4.04,6.12-8.5,9.29-.82.58-3.1,2.13-6.55,3.51-4.13,1.65-9.71,2.77-18.61,2.39-14.33-.61-25.27-7.89-36.91-14.02-13.5-7.11-24.81-12.87-24.16-14.2.25-.52,11.67,2.07,18.4,1.12Z"/>
+      <path class="cls-1" d="m43.4,4.91c12.46,4.57,70.99,45.4,82.11,48.6,13.49,3.89,24.68,4.88,34.83.14,6.9-3.23,11.45-8.12,14.15-11.66-.74,1.91-1.57,3.9-2.53,5.96-1.41,3.04-2.89,5.8-4.35,8.28-3.1,5.1-7.84,11.8-14.83,18.5-9.44,9.07-18.69,14.04-23.51,16.35-4.99,2.4-18.72,8.41-36.81,8.82-.81.02-1.48.02-1.94.02h0c-4.98.02-11.59-.35-19.17-1.96-13.57-2.87-23.27-8.18-27.65-10.83-2.65-1.6-8.91-5.56-15.75-12.08-1.64-1.56-3.96-3.89-6.41-6.75-8.14-9.52-12.6-19.06-14.62-23.92C1.62,31.64.27,20.14,0,12.48c1.72-2.71,4.77-6.64,9.72-9.37,11.46-6.34,24.53-1.55,33.68,1.8Z"/>
+      <path class="cls-3" d="m40.37,49.1c2.1-.64,3.89-.81,5.3-.88,10.16-.5,19.75,3.41,21.03,3.95.03.01.08.03.14.06,12.03,5.08,24.84,14.67,34.04,19.31,2.41,1.22,17.95,8.8,36.91,5.84,8.16-1.27,14.53-4.12,18.63-6.33-.52.57-1.34,1.44-2.38,2.47-9.28,9.28-18.41,14.34-22.24,16.3-1.21.62-4.73,2.52-9.65,4.24-2.79.98-11.28,4.28-23.54,5.48-3.75.37-13.05,1-23.45-.79-5.44-.93-9.47-2.14-10.33-2.4-4.71-1.44-8.41-2.79-11.22-4.03-2.31-1.02-4.46-2.23-7.47-3.91-.67-.37-3.93-2.04-7.99-4.93-3.26-2.32-4.75-3.56-5.9-4.73-4.42-4.51-7.44-13.74-3.54-21.01,3.27-6.1,9.98-8.14,11.65-8.64Z"/>
+    </g>
+  </g>
+</svg>
