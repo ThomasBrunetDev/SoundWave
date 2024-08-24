@@ -3,6 +3,7 @@ import { useInfos } from "../../context/userContext";
 import { motion, AnimatePresence } from "framer-motion";
 import Checkbox from "./Checkbox";
 import "./checkbox.css";
+
 const CreatePlaylistForm = ({ open, setOpen }) => {
   const { createPublicPlaylist } = useInfos();
   const [playlistTitle, setPlaylistTitle] = useState("");

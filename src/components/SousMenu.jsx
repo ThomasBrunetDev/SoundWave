@@ -5,7 +5,7 @@ const SousMenu = ({ elements, closeFn }) => {
   return (
     <>
       <motion.ul
-        className='flex flex-col gap-3 bg-perso-grisFonce p-3 rounded-2xl min-w-[270px] max-w-[350px]'
+        className='flex flex-col gap-3 bg-perso-grisFonce p-3 rounded-2xl min-w-[270px] max-w-[350px] text-white'
         initial={{ opacity: 0, translateY: 10 }}
         animate={{ opacity: 1, translateY: 0, transition: { duration: 0.2 } }}
         exit={{ opacity: 0, translateY: 10 }}>
