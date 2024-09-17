@@ -12,7 +12,8 @@ import Loading from "../TableauDeBord/Loading";
 import CreateCommentaireForm from "./CreateCommentaireForm";
 import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { FaPlay, FaHashtag, FaRegComment } from "react-icons/fa6";
+import { MdModeEdit, MdCancel } from "react-icons/md";
+import { FaPlay, FaHashtag, FaRegComment, FaCheck } from "react-icons/fa6";
 import { BiSolidLike, BiLike } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
@@ -159,21 +160,22 @@ const PlaylistPublicDetail = () => {
 
   const handleSaveTitle = async () => {
     try {
-      // Call the changePublicPlaylistName function to update the title
+      // Appelle la fonction pour changer le nom de la liste publique
       await changePublicPlaylistName(newTitle, idPlaylist);
 
-      // Fetch the updated playlist data
+      // Récupère les données mises à jour de la liste publique
       const updatedPlaylist = await fetchPublicPlaylistDetails(idPlaylist);
 
-      // Update the state with the new playlist data
+      // Met à jour l'état avec les nouvelles données de la liste publique
       setPublicPlaylist(updatedPlaylist);
 
-      // Exit the editing mode
+      // Quitte le mode édition
       setEditingTitle(false);
     } catch (error) {
-      console.error("Error updating playlist title:", error);
+      console.error("Erreur lors de la mise à jour du titre de la liste publique :", error);
     }
   };
+
 
   const handleDeleteComment = async (commentId) => {
     try {
@@ -251,11 +253,10 @@ const PlaylistPublicDetail = () => {
 
   return (
     <div
-      className={`${
-        selectedMusicObj && screenWidth < 1024 && commentairesVisible
-          ? "pb-56"
-          : "pb-40"
-      } min-h-screen w-full flex flex-col items-start`}>
+      className={`${selectedMusicObj && screenWidth < 1024 && commentairesVisible
+        ? "pb-56"
+        : "pb-40"
+        } min-h-screen w-full flex flex-col items-start`}>
       {/* Fait un retour vers larriere */}
 
       {publicPlaylist !== null ? (
@@ -263,11 +264,10 @@ const PlaylistPublicDetail = () => {
           {console.log(publicPlaylist)}
           <div
             style={{
-              backgroundImage: `url(${
-                publicPlaylist.songs == null
-                  ? "https://images.unsplash.com/photo-1701990630137-005958559f36?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  : publicPlaylist.songs[publicPlaylist.songs.length - 1].album
-              })`,
+              backgroundImage: `url(${publicPlaylist.songs == null
+                ? "https://images.unsplash.com/photo-1701990630137-005958559f36?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                : publicPlaylist.songs[publicPlaylist.songs.length - 1].album
+                })`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -288,11 +288,43 @@ const PlaylistPublicDetail = () => {
             <div className='public-playlist-cover flex w-full h-full backdrop-brightness-75 gap-1 items-end justify-start p-6 px-12'>
               <div className='flex items-center w-full justify-between'>
                 <div>
-                  <h1 className='font-tanker text-4xl'>
-                    {screenWidth < 1280 && publicPlaylist.titre.length > 15
-                      ? `${publicPlaylist.titre.substring(0, 15)}...`
-                      : publicPlaylist.titre}
-                  </h1>
+                  <div className='flex gap-4'>
+                    {editingTitle ? (
+                      <>
+                        <input
+                          type='text'
+                          value={newTitle}
+                          className="w-full bg-transparent border-b-2 border-white text-white font-tanker text-4xl"
+                          onChange={(e) => setNewTitle(e.target.value)}
+                        />
+                        <div className="flex gap-3 items-center text-xl">
+                          <button onClick={handleSaveTitle}>
+                            <FaCheck />
+                          </button>
+                          <button onClick={() => setEditingTitle(false)}>
+                            <MdCancel />
+                          </button>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <h1 className='font-tanker text-4xl'>
+                          {screenWidth < 1280 && publicPlaylist.titre.length > 15
+                            ? `${publicPlaylist.titre.substring(0, 15)}...`
+                            : publicPlaylist.titre}
+                        </h1>
+                        {user && user.uid === publicPlaylist.creatorId && (
+                          <button onClick={() => {
+                            setNewTitle(publicPlaylist.titre);  // Met à jour newTitle avec le titre actuel
+                            setEditingTitle(true);
+                          }}>
+                            <MdModeEdit className='text-xl' />
+                          </button>
+                        )}
+                      </>
+                    )}
+                  </div>
+
                   <h2 className='text-gray-300'>
                     {publicPlaylist.creator || "Unknown User"}
                   </h2>
@@ -313,7 +345,7 @@ const PlaylistPublicDetail = () => {
                     onClick={() => handleLikeClick()}
                     className='flex items-center justify-center text-2xl gap-3'>
                     {publicPlaylist.likes &&
-                    publicPlaylist.likes.includes(user.uid) ? (
+                      publicPlaylist.likes.includes(user.uid) ? (
                       <BiSolidLike />
                     ) : (
                       <BiLike />
@@ -378,7 +410,7 @@ const PlaylistPublicDetail = () => {
                         </div>
                         <div className='flex items-center gap-4'>
                           {selectedMusicObj &&
-                          selectedMusicObj.id === song.id ? (
+                            selectedMusicObj.id === song.id ? (
                             <div className='flex items-end justify-end '>
                               <span className='h-7'>
                                 <IsPlaying />
@@ -444,7 +476,7 @@ const PlaylistPublicDetail = () => {
                       {user ? (
                         <>
                           {(user && user.uid === comment.user) ||
-                          user.uid === publicPlaylist.creatorId ? (
+                            user.uid === publicPlaylist.creatorId ? (
                             <div className='flex w-full gap-3'>
                               <div className=' bg-[#754ABA] w-full  rounded-2xl p-3 flex flex-col gap-1'>
                                 <h2 className='font-bold opacity-75'>
