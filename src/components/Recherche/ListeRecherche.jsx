@@ -264,7 +264,7 @@ const ListeRecherche = () => {
         try {
           setLoading(true);
           const response = await fetchJsonp(
-            `https://api.deezer.com/search?q=track:${encodeURIComponent(debouncedSearchValue)}&output=jsonp&limit=${limitSearch}`
+            `https://api.deezer.com/search?q=track:\"${debouncedSearchValue}\"&output=jsonp&limit=${limitSearch}`
           );
           const json = await response.json();
           setRecherche(json.data);
@@ -280,6 +280,23 @@ const ListeRecherche = () => {
     };
     fetchData();
   }, [debouncedSearchValue, limitSearch]);
+
+  //   const fetchData = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await fetchJsonp(
+  //         // `https://api.deezer.com/search?q=${rechercheFiltre}:\"${debouncedSearchValue}\"&output=jsonp&limit=${limitSearch}`
+  //         `https://api.deezer.com/search?q=track:\"${debouncedSearchValue}\"&output=jsonp&limit=${limitSearch}`
+  //       );
+  //       const json = await response.json();
+  //       setRecherche(json.data);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.log("Error fetching data", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [debouncedSearchValue, limitSearch]);
 
 
   const click = (resul) => {
@@ -342,7 +359,13 @@ const ListeRecherche = () => {
       {/* GESTION DE L'AFFICHAGE*/}
 
       {/* Avant la recherche */}
-      {recherche.length === 0 ? (null) :
+      {recherche.length === 0 ? (
+        <div className="w-full h-full justify-center relative flex text-white font-bold text- mt-4">
+          <span>
+            Recherchez un titre pour afficher les résultats
+          </span>
+        </div>
+      ) :
         (
 
           // Après la recherche
