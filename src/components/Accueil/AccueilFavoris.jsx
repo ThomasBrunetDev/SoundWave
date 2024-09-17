@@ -30,16 +30,7 @@ const AccueilFavoris = () => {
     fetchFavoris();
   }, []);
 
-  const click = () => {
-    if (favoris.length > 0) {
-      const playlist = favoris.map((song) => song.id);
-      addMusicPlaying(playlist[0]);
-      playlistDetails({
-        titre: "Populaire",
-        songs: favoris,
-      });
-    }
-  };
+
 
 
   return (
@@ -53,7 +44,8 @@ const AccueilFavoris = () => {
         {favoris.map(
           (favori, index) => (
             (
-              <ItemPopulaire key={index} favori={favori} index={index} />
+              <ItemPopulaire clicFn={() => addMusicPlaying(favori.id)}
+              key={index} favori={favori} index={index} />
             )
           )
         )}

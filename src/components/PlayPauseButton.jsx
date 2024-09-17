@@ -1,6 +1,6 @@
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa6";
-const PlayPauseButton = ({ isPaused, couleur, sizePlay, sizePause }) => {
+const PlayPauseButton = ({ isPaused, couleur, sizePlay, sizePause, clicFn }) => {
 
   const styleCouleur = {
     color: couleur,
@@ -8,9 +8,9 @@ const PlayPauseButton = ({ isPaused, couleur, sizePlay, sizePause }) => {
 
 
   return (
-    <div style={styleCouleur} className="flex items-center">
+    <button onClick={clicFn} style={styleCouleur} className="flex items-center">
       {isPaused ? <FaPlay className={`text-${sizePlay}`} /> : <FaPause className={`text-${sizePause}`} />}
-    </div>
+    </button>
 
   )
 };

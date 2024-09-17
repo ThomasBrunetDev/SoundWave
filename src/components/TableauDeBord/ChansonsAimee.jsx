@@ -1,19 +1,22 @@
 import { motion } from "framer-motion";
 import PlayPauseButton from "../PlayPauseButton";
 import LikeBtn from "../LikeBtn";
-import { useInfos } from "../../context/userContext";
+import { useMusic } from "../../context/musicContext";
 const ChansonsAimee = ({ index, chanson, handleDeleteLikedSong }) => {
-
+  const { addMusicPlaying, selectedMusicObj } = useMusic();
 
   return (
+
     <>
-      <motion.li 
-            initial={{ scale: 0 }} 
-            transition={{ delay: index * 0.1, duration: .05, type: "spring", stiffness: 260, damping: 20, }} 
-            animate={{ scale: 1 }} 
-            exit={{scale:0}}
-            className='flex flex-col gap-2 items-center' 
-            key={chanson.id}>
+    
+      <motion.li
+        
+        initial={{ scale: 0 }}
+        transition={{ delay: index * 0.1, duration: .05, type: "spring", stiffness: 260, damping: 20, }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0 }}
+        className='flex flex-col gap-2 items-center'
+        key={chanson.id}>
         <div className='relative justify-center flex items-center'>
           {chanson.album && (
             <img
@@ -22,13 +25,15 @@ const ChansonsAimee = ({ index, chanson, handleDeleteLikedSong }) => {
               alt={`${chanson.title} Album Cover`}
             />
           )}
-          <span className='flex justify-center items-center absolute bg-gray-700 rounded-2xl p-3.5'>
+          <button onClick={() => addMusicPlaying(chanson.id)} className='flex justify-center items-center absolute bg-gray-700 rounded-2xl p-3.5'>
             <PlayPauseButton
-              isPaused={true}
+              
+              isPaused={selectedMusicObj && selectedMusicObj.id === chanson.id ? false : true}
               couleur={"#955EED"}
               sizePlay={"2xl"}
+              sizePause={"2xl"}
             />
-          </span>
+          </button>
           <button
             onClick={handleDeleteLikedSong}
             className='p-2 bg-gray-700 absolute bottom-0 right-2 rounded-xl'>

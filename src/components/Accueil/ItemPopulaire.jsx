@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import { IoPlay } from "react-icons/io5";
 import { useInfos } from "../../context/userContext";
 
-const ItemPopulaire = ({ favori, index }) => {
+const ItemPopulaire = ({ favori, index, clicFn }) => {
   const [sousMenuVisible, setSousMenuVisible] = useState(false);
   const controls = useAnimation();
   const [animated, setAnimated] = useState(false);
@@ -78,7 +78,7 @@ const ItemPopulaire = ({ favori, index }) => {
                 <AnimatePresence>
                   {hover && (
 
-                    <motion.button initial={{ opacity: 0, translateY: 10 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: 10 }} className="absolute text-2xl z-10 drop-shadow-md text-perso-orangePale">
+                    <motion.button onClick={clicFn} initial={{ opacity: 0, translateY: 10 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: 10 }} className="absolute text-2xl z-10 drop-shadow-md text-perso-orangePale">
                       <IoPlay />
                     </motion.button>
 

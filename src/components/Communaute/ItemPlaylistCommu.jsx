@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import { FaPlay, FaComments } from "react-icons/fa6";
 import { BiLike, BiSolidLike } from "react-icons/bi";
 import { useEffect, useState } from "react";
+import { useMusic } from "../../context/musicContext";
 import Commentaires from "./Commentaires";
 import { motion } from "framer-motion";
 
 const ItemPlaylistCommu = ({ playlist, likePublicPlaylist, user, index }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [commentairesVisible, setCommentairesVisible] = useState(false);
+  const { addMusicPlaying } = useMusic();
 
   const style = {
     backgroundImage:
@@ -47,7 +49,8 @@ const ItemPlaylistCommu = ({ playlist, likePublicPlaylist, user, index }) => {
         key={playlist.id}>
         {console.log(playlist)}
         <div className='flex gap-5 items-center'>
-          <button className='bg-perso-mauveFonce h-12 w-12 flex items-center justify-center rounded-full text-xl'>
+          <button onClick={() => addMusicPlaying(playlist.songs[0].id)}
+           className='bg-perso-mauveFonce h-12 w-12 flex items-center justify-center rounded-full text-xl'>
             <FaPlay />
           </button>
           <Link
