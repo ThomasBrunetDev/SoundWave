@@ -34,22 +34,23 @@ const ItemAlbum = ({ album }) => {
             <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className='flex items-center relative'>
                 <span className='w-32 object-cover h-44 rounded-2xl z-10 overflow-hidden'>
 
-                    <AnimatePresence>
+                    {/* <AnimatePresence>
                         {hover && largeurEcran > 1024 && (
                             <motion.i initial={{ translateY: 5, opacity: 0 }} animate={{ translateY: 0, opacity: 1 }} exit={{ translateY: 5, opacity: 0 }} className='absolute bottom-2 right-2 z-10 pl-0.5 text-perso-mauvePale text-[20px] backdrop-blur-md font-supremeBold border-perso-mauvePale border-2 flex items-center justify-center w-8 h-8 rounded-full'>
                                 <IoPlay />
                             </motion.i>
 
                         )}
-                    </AnimatePresence>
-                    {largeurEcran < 1024 && (
+                    </AnimatePresence> */}
+                    {/* {largeurEcran < 1024 && (
 
                         <motion.i initial={{ translateY: 10, opacity: 0 }} animate={{ translateY: 0, opacity: 1 }} exit={{ translateY: 10, opacity: 0 }} className='absolute bottom-16 right-[2.7rem] z-10 pl-0.5 text-perso-mauvePale text-2xl backdrop-blur-md font-supremeBold border-perso-mauvePale border-[3px] flex items-center justify-center w-12 h-12 rounded-full'>
                             <IoPlay />
                         </motion.i>
-                    )}
+                    )} */}
 
-                    <img className={`w-32 h-44 scale-110 object-cover transition-all ease-in duration-150 ${hover && "lg:scale-105 lg:blur-[2px] lg:brightness-50"}`} src={album.cover_medium} alt={album.title} />
+                    <img className={`w-32 h-44 scale-110 object-cover transition-all ease-in duration-150`} src={album.cover_medium} alt={album.title} />
+                    {/* <img className={`w-32 h-44 scale-110 object-cover transition-all ease-in duration-150 ${hover && "lg:scale-105 lg:blur-[2px] lg:brightness-50"}`} src={album.cover_medium} alt={album.title} /> */}
                 </span>
                 <motion.img animate={hover && largeurEcran > 1024 ? { translateX: 25, rotate: randomRotation, transition: { duration: 0.2 } } : { translateX: 0, rotate: 0, transition: { duration: 0.2 } }} className='absolute left-10  w-32' src={disqueSVG} alt="disqueSVG" />
             </div>

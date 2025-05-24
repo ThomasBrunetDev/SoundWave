@@ -20,7 +20,7 @@ const ListeArtiste = ({ chansonsEcoute, screenWidth }) => {
   }, {});
 
   const topArtists = Object.entries(artistStats)
-    .sort(([ , aStats], [ , bStats]) => bStats.totalNbFoisEcoute - aStats.totalNbFoisEcoute)
+    .sort(([, aStats], [, bStats]) => bStats.totalNbFoisEcoute - aStats.totalNbFoisEcoute)
     .slice(0, 3);
 
   useEffect(() => {

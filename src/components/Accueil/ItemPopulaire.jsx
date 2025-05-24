@@ -86,7 +86,7 @@ const ItemPopulaire = ({ favori, index, clicFn }) => {
                 </AnimatePresence>
 
                 {largeurEcran < 1024 && (
-                  <motion.button initial={{ opacity: 0, translateY: 10 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: 10 }} className="absolute text-2xl z-10 drop-shadow-md text-perso-orangePale">
+                  <motion.button onClick={clicFn} initial={{ opacity: 0, translateY: 10 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: 10 }} className="absolute text-2xl z-10 drop-shadow-md text-perso-orangePale">
                     <IoPlay />
                   </motion.button>
                 )}

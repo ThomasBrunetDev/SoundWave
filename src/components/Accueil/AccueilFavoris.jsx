@@ -35,17 +35,16 @@ const AccueilFavoris = () => {
 
   return (
     <div className='bg-perso-mauvePale py-7 pb-10 w-full md:w-[90%] lg:h-[450px] px-10 flex flex-col items- justify-center gap-10 rounded-3xl'>
-      <div className='flex justify-between items-center'>
-        <h1 className='font-tanker text-4xl'>Populaire</h1>
-        <button onClick={() => click()}><IoPlay /></button>
-      </div>
+
+      <h1 className='font-tanker text-4xl'>Populaire</h1>
+
 
       <ul className='lg:grid lg:grid-cols-3 lg:gap-y-7 lg:gap-x-12 flex flex-col gap-7 w-full '>
         {favoris.map(
           (favori, index) => (
             (
               <ItemPopulaire clicFn={() => addMusicPlaying(favori.id)}
-              key={index} favori={favori} index={index} />
+                key={index} favori={favori} index={index} />
             )
           )
         )}
